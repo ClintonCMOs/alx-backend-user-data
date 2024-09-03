@@ -30,3 +30,9 @@ def stats() -> str:
 def get_unauthorized() -> str:
     """Endpoint that triggers a 401 Unauthorized error."""
     abort(401)
+
+
+@app_views.route('/forbidden', methods=['GET'], strict_slashes=False)
+def get_forbidded() -> str:
+    """Endpoint that triggers a 403 forbidden access error."""
+    abort(403)
